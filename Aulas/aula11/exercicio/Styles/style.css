@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(16, 41, 16);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+form p {
+    margin: 20px;
+}
+
+form > p > fieldset {
+    border: 1px solid #ccc;
+    margin: 10px;
+}

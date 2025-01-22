@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site teste</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+
+    <script>
+        /* 
+            alert('Boas vindas ao site!');
+            alert('Preencha o formulário abaixo para continuar');
+        */
+    </script>
+
+    <header>
+        <script>
+            alert('Preencha o formulário abaixo para continuar');
+            alert('Seja sincero nas respostas!');
+            alert('Se marcar a ala debilidades como "possuo", e quiser remarcar "não possui", reinicie a aba, por favor ');
+        </script>
+        <h1>Seleção de pessoas</h1>
+    </header>
+
+    <main>
+        <form action="index.php" method="post" autocomplete="on">
+            <p>
+                <label for="iNome">Nome:</label>
+                <input type="text" name="nome" id="iNome" placeholder="Digite seu nome">
+            </p>
+            <p>
+                <label for="iIdade">Idade:</label>
+                <input type="number" name="idade" id="iIdade" placeholder="Digite sua idade" >
+            </p>
+            <p>
+                <label for="iPeso">Peso:</label>
+                <input type="number" name="peso" id="iPeso" placeholder="Digite seu peso" max="250">
+            </p>
+            <p>
+                <label for="iAltura">Altura:</label>
+                <input type="number" name="altura" id="iAltura" placeholder="Digite sua altura">
+            </p>
+            <p>
+                <fieldset>
+                  <legend>Debilidades</legend>
+        
+                  <label for="sim">Possuo</label>
+                  <input type="radio" id="dSim" name="doe" value="sim" onclick="clickdoe()">
+        
+                  <label for="Não">Não possuo</label>
+                  <input type="radio" id="dNao" name="doe" value="Não">
+        
+                </fieldset>
+                <div id="dSim"></div>
+            </p>
+            <p>
+                <fieldset>
+                  <legend>Sexo</legend>
+        
+                  <label for="masculino">Masculino</label>
+                  <input type="radio" id="masculino" name="sexo" value="masculino">
+        
+                  <label for="feminino">Feminino</label>
+                  <input type="radio" id="feminino" name="sexo" value="feminino">
+        
+                  <label for="outro">Outro</label>
+                  <input type="radio" id="outro" name="sexo" value="outro">
+                </fieldset>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar() + imc()">
+                <input type="reset" value="Limpar">
+            </p>
+        </form>
+        <p id="resultado">
+            <div id="nome"></div>
+            <div id="med"></div>
+            <div id="res"></div>
+        </p>
+    </main>
+
+    <script>
+
+        var danger = 0;
+
+        function clickdoe() {
+            danger++;
+        }
+
+            function imc() { //calcula o IMC
+            
+                if (document.getElementById('iNome').value.length < 2 || document.getElementById('iIdade').value == "" || document.getElementById('iPeso').value == "" || document.getElementById('iAltura').value == "") {
+                
+                } else {
+                    var peso = document.getElementById('iPeso').value;
+                    var mAltura = document.getElementById('iAltura').value;
+                    var altura = mAltura / 100;
+                    var imc = peso / (altura * altura);
+                    med.innerHTML = "Seu IMC é: " + imc.toFixed(2) + "<br>";
+
+                    if (imc < 18.5) {
+                        med.innerHTML += "Você está abaixo do peso! <br>";
+                        danger++;
+                    } else if (imc >= 18.5 && imc < 24.9) {
+                        med.innerHTML += "Você está no peso ideal! <br>";
+                    } else if (imc >= 25 && imc < 29.9) {
+                        med.innerHTML += "Você está com sobrepeso! <br>";
+                        danger++;
+                    } else if (imc >= 30 && imc < 34.9) {
+                        med.innerHTML += "Você está com obesidade grau 1! <br>";
+                        danger++;
+                    } else if (imc >= 35 && imc < 39.9) {
+                        med.innerHTML += "Você está com obesidade grau 2! <br>";
+                        danger += 2;
+                    } else {
+                        med.innerHTML += "Você está com obesidade grau 3! <br>";
+                        danger += 2;
+                    }
+
+                    if (danger > 1) {
+                        med.innerHTML += "recomendamos que procure um nutricionista! <br>";
+                    }
+                }
+            }
+    
+            function verificar() { //exibe o resultado
+            if (document.getElementById('iNome').value.length == "" || document.getElementById('iIdade').value == "" || document.getElementById('iPeso').value == "" || document.getElementById('iAltura').value == "") {
+
+                window.alert('Preencha todos os campos obrigatórios!');
+
+            } else {
+
+                nome.innerHTML = "Olá, " + iNome.value + "<br>"; 
+
+                if (danger < 3 && iIdade.value >= 18 && iIdade.value <= 50) {
+                    res.innerHTML = "Parabéns... Você está apto para a seleção! <br>";
+                } else {
+                    res.innerHTML = "Infelizmente você não está apto para a seleção! <br>";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
