@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        input {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="n1" id="in1"> +
+    <input type="number" name="n2" id="in2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado: </div>
+
+    <script>
+        function somar() {
+            var tNum1 = document.getElementById('in1');
+            var tNum2 = document.getElementById('in2');
+
+            var res = document.getElementById('res');
+
+            var num1 = Number(tNum1.value);
+            var num2 = Number(tNum2.value);
+
+            var s = num1 + num2
+
+            res.innerHTML = "A soma entre " + num1 + " e " +  num2 + " é igual a: " + s;
+        
+        }
+    </script>
+</body>
+</html>

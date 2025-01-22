@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area {
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            line-height: 400px;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" onmousemove="move()">
+        interaja...
+    </div>
+
+    <script>
+
+        var a = document.getElementById('area');
+        
+        function clicar() {
+            a.style.backgroundColor = 'blue';
+            a.innerText = 'Clicou';
+        }
+
+        function entrar() {
+            a.innerText = 'Entrou!';
+            a.style.backgroundColor = 'red';
+
+        }
+
+        function sair() {
+            a.innerText = 'Saiu!';
+            a.style.backgroundColor = 'green';
+        }
+    </script>
+</body>
+</html>
+<!--
+
+                MOUSE_EVENTS
+    mouseenter mousemove mousedown mouseup mouseover mouseout click dblclick
+
+-->
+
+
+<!--
+
+                FUNÇÕES 
+    function acao(parametros){
+        document.write(parametros);
+    }
+-->
