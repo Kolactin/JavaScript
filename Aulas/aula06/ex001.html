@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 06 </title>
 </head>
 <body>
-    
+    <script>
+        var n1 = Number(window.prompt('Digite um número: '));
+        var n2 = Number(window.prompt('Digite outro número: '));
+        var s = n1 + n2;
+        window.alert("A soma entre" + " " + n1 + " e" + " " + n2 +" , é igual a: " + s);
+
+            /*Podemos utilizar apenas "Number" para deixar o código mais limpo, entretanto, é importante lembrar que o "parseInt" é mais específico e pode ser mais útil em determinadas situações.
+
+            Para converter de número para String, usamos String(var) ou var.toString().
+
+             número + número = adição
+             string + string = concatenação
+            */
+
+
+            /*
+
+                                TEMPLATE STRING
+            
+            Podemos utilizar "${var}" para concatenar strings e variáveis, tornando o código mais limpo e legível. 
+
+            Exemplo: "A soma entre ${n1} e ${n2} é igual a ${s}."
+            
+            */
+
+            /*
+                Alguns outros exemplos:
+                    var.lenght = quantidade de caracteres
+                    var.toUpperCase() = transforma a string em maiúscula
+                    var.toLowerCase() = transforma a string em minúscula
+            */
+    </script>
 </body>
 </html>
