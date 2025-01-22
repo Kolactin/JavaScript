@@ -6,7 +6,21 @@
     <title>Operadores lógicos</title>
 </head>
 <body>
-    
+    <script>
+        var a = Number(window.prompt("Digite o valor de a: "));
+        var b = Number(window.prompt("Digite o valor de b: "));
+
+        a > 5 && b % 2 == 0 ? document.write(a +" é maior que 5 e " + b + " é um número par ") : document.write(a +" é menor que 5, ou " + b + " não é um número par ");
+
+        document.write("<br>");
+
+        a > 5 || b % 2 == 0 ? document.write(a +" é maior que 5, ou " + b + " é um número par ") : document.write(a +" é menor que 5, e " + b + " não é um número par ");
+
+        document.write("<br>");
+
+        !(a > 5) ? document.write( a +" é menor ou igual a 5") : document.write( a +" é maior que 5");
+
+    </script>
 </body>
 </html>
 
