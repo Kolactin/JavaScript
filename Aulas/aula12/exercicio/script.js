@@ -9,7 +9,6 @@ function carregar(){
 
     if(hora < 6){
         msg.innerHTML = "<h1>Olá " + nome + ", boa madrugada</h1>";
-
     } else if(hora < 12){
         msg.innerHTML = "<h1>Olá " + nome + ", bom dia</h1>";
     }else if(hora < 18){
