@@ -6,81 +6,26 @@
     <title>Relogio</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-<body> 
+<body onload="carregar()"> 
 
-    <header>
-        <script>
-            var hora = new Date().getHours();
-            var minuto = new Date().getMinutes();
-
-            if( hora > 6 && hora < 12){
-                document.write("<h1>Olá, bom dia</h1>");
-            }else if(hora < 18){
-                document.write("<h1>Olá, boa tarde</h1>");
-            }else if (hora < 24){
-                document.write("<h1>Olá, boa noite</h1>");
-            } else {
-                document.write("<h1>Olá, boa madrugada</h1>");
-            }
-        </script>
-    </header>
+    <header></header> 
 
     <main>
         <div>
-            <h2>Horário atual</h2>
             <p>
-                <script>
-                    document.write("Agora são: " + hora + ":" + minuto + " horas.");
-                </script>
-
-                <div id="picture">
-                    <img id="manha" src="imagens/manha.jpeg" alt="imagem referente ao horário">
-                    <img id="tarde" src="imagens/tarde.jpeg" alt="imagem referente ao horário">
-                    <img id="noite" src="imagens/noite.jpeg" alt="imagem referente ao horário">
-                    <img id="madrugada" src="imagens/madrugada.jpeg" alt="imagem referente ao horário">
+                <div id="msg">
+                    A mensagem aparecerá aqui...
                 </div>
 
-        <script>
-           /* function imagem(){
-                if(hora > 6 && hora < 12){
-                    document.querySelector("img#manha").style.display = "block";
-                    document.querySelector("img#tarde").style.display = "none";
-                    document.querySelector("img#noite").style.display = "none";
-                    document.querySelector("img#madrugada").style.display = "none";
-                }else if(hora < 18){
-                    document.querySelector("img#manha").style.display = "none";
-                    document.querySelector("img#tarde").style.display = "block";
-                    document.querySelector("img#noite").style.display = "none";
-                    document.querySelector("img#madrugada").style.display = "none";
-                }else if(hora < 24){
-                    document.querySelector("img#manha").style.display = "none";
-                    document.querySelector("img#tarde").style.display = "none";
-                    document.querySelector("img#noite").style.display = "block";
-                    document.querySelector("img#madrugada").style.display = "none";
-                }else{
-                    document.querySelector("img#manha").style.display = "none";
-                    document.querySelector("img#tarde").style.display = "none";
-                    document.querySelector("img#noite").style.display = "none";
-                    document.querySelector("img#madrugada").style.display = "block";
-                }
-            }*/
+                <div id="picture">
+                    <img id="imagem" src="imagens/madrugada.jpeg" alt="Imagem do dia">
+                </div> 
 
-            function background(){
-                if(hora > 6 && hora < 12){
-                    document.body.style.backgroundColor = "yellow";
-                }else if(hora < 18){
-                    document.body.style.backgroundColor = "orange";
-                }else if(hora < 24){
-                    document.body.style.backgroundColor = "blue";
-                }else{
-                    document.body.style.backgroundColor = "black";
-                }
-            }
-        </script>
+       <script src="script.js"></script>
 
     </main>
 
     <footer>
-        <p>Desenvolvido por: Junior</p>
+        <p id="end">Desenvolvido por: <a href="https://github.com/Kolactin" target="_blank">Junior</a></p>
 </body>
 </html>
