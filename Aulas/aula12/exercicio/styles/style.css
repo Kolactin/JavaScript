@@ -3,9 +3,13 @@
 header {
     color: white;
     background-color: darkgray;
-    margin: 20px 0px;
+    margin-bottom: 20px;
     text-align: center;
-    height: 5vh;
+    height: 5dvh;
+}
+
+header h1 {
+    margin: 20px 0px;
 }
 
 html, body {
@@ -23,8 +27,8 @@ main {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    max-width: 80dvh;
-    height: 70dvh;
+    max-width: 80vh;
+    height: 70vh;
 
     background-color: white;
     border-radius: 10px;
@@ -33,6 +37,7 @@ main {
 div {
     margin: 10px;
 }
+
 img#imagem {
     margin: auto;
     margin: 5px;
