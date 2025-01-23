@@ -80,15 +80,18 @@
                 </fieldset>
             </p>
             <p>
-                <input type="button" value="Verificar" onclick="verificar() + imc()">
+                <input type="button" value="Verificar" onclick="verificar() + imc() + pic()">
                 <input type="reset" value="Limpar">
             </p>
         </form>
-        <p id="resultado">
-            <div id="nome"></div>
-            <div id="med"></div>
-            <div id="res"></div>
-        </p>
+        <div>
+            <img id="foto" src="">
+            <p id="resultado">
+                <div id="nome"></div>
+                <div id="med"></div>
+                <div id="res"></div>
+            </p>
+        </div>
     </main>
 
     <script>
@@ -99,7 +102,7 @@
             danger++;
         }
 
-            function imc() { //calcula o IMC
+        function imc() { //calcula o IMC
             
                 if (document.getElementById('iNome').value.length < 2 || document.getElementById('iIdade').value == "" || document.getElementById('iPeso').value == "" || document.getElementById('iAltura').value == "") {
                 
@@ -135,7 +138,7 @@
                 }
             }
     
-            function verificar() { //exibe o resultado
+        function verificar() { //exibe o resultado
             if (document.getElementById('iNome').value.length == "" || document.getElementById('iIdade').value == "" || document.getElementById('iPeso').value == "" || document.getElementById('iAltura').value == "") {
 
                 window.alert('Preencha todos os campos obrigatórios!');
@@ -150,6 +153,34 @@
                     res.innerHTML = "Infelizmente você não está apto para a seleção! <br>";
                 }
             }
+        }
+
+        function pic() {
+            var img = document.getElementById('foto');
+            var sexo = document.getElementsByName('sexo');
+
+            if (sexo = 'masculino') {
+                if (iIdade.value < 12) {
+                    img.src = "imagens/menino.jpg";
+                } else if (iIdade.value <= 18) {
+                    img.src = "imagens/adolescente_M.jpg";
+                } else if (iIdade.value <= 50) {
+                    img.src = "imagens/homem.jpeg";
+                }else if (iIdade.value > 50) {
+                    img.src = "imagens/idoso.jpeg";
+                }
+            } 
+            if (sexo = 'feminino') {
+                if (iIdade.value < 12) {
+                    img.src = "imagens/menina.jpeg";
+                } else if (iIdade.value <= 18) {
+                    img.src = "imagens/adolescente_F.png";
+                } else if (iIdade.value <= 50) {
+                    img.src = "imagens/mulher.jpg";
+                }else {
+                    img.src = "imagens/idosa.jpg";
+                }
+            } 
         }
     </script>
 </body>
