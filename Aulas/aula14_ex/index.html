@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site teste</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+
+    <script>
+        /* 
+            alert('Boas vindas ao site!');
+            alert('Preencha o formulário abaixo para continuar');
+        */
+    </script>
+
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <main>
+        <form action="" method="post" autocomplete="on">
+            <p>
+                <label for="iN1">Selecione um número</label>
+            </p>
+            <p>
+                <input type="number" name="n1" id="iN1" placeholder="Informe o valor">
+            </p>
+            
+            <p>
+                <input type="button" value="Calcular" onclick="num() ">
+                <input type="reset" value="Limpar">
+            </p>
+        </form>
+        <div>
+            <p id="resultado">
+            <div id="med"></div>
+            <div id="res"></div>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        function num() {
+            if (document.getElementById('iN1').value == "") {
+                
+                } else {
+                    for (var c = 1; c <= 10; c++) {
+                        var resultado = iN1.value * c;
+                        med.innerHTML += iN1.value + "" + "x" + c + " = " + resultado + "<br>";
+                    }
+                }
+        }
+    </script>
+</body>
+</html>
