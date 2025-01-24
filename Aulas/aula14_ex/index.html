@@ -29,13 +29,12 @@
             </p>
             
             <p>
-                <input type="button" value="Calcular" onclick="num() ">
+                <input type="button" value="Calcular" onclick="num()">
                 <input type="reset" value="Limpar">
             </p>
         </form>
         <div>
             <p id="resultado">
-            <div id="med"></div>
             <div id="res"></div>
             </p>
         </div>
@@ -44,11 +43,11 @@
     <script>
         function num() {
             if (document.getElementById('iN1').value == "") {
-                
+               
                 } else {
                     for (var c = 1; c <= 10; c++) {
                         var resultado = iN1.value * c;
-                        med.innerHTML += iN1.value + "" + "x" + c + " = " + resultado + "<br>";
+                        res.innerHTML += iN1.value + "" + "x" + c + " = " + resultado + "<br>";
                     }
                 }
         }
