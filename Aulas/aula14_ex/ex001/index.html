@@ -4,50 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Vamos contar</h1>
-    </header>
-
-    <main>
-        <section>
-            <div>
-                <form action="" method="post">
-                    <p>
-                        <label for="iN1">Inicio: </label>
-                        <input type="number" name="n1" id="iN1">
-                    </p>
-                    <p>
-                        <label for="iN2">Fim: </label>
-                        <input type="number" name="n2" id="iN2">
-                    </p>
-                    <p>
-                        <label for="iStep">Passo: </label>
-                        <input type="number" name="step" id="iStep">
-                    </p>
-                    <p>
-                        <input type="button" value="contar" onclick="contar()">
-                    </p>
-                </form>
-                <div id="res">
-                    A resposta aparecerá aqui...
+        <header>
+            <h1>Vamos contar</h1>
+        </header>
+        <main>
+            <div id="content">
+            <section>
+                <div>
+                    <form action="" method="post">
+                        <p>
+                            <label for="iN1">Inicio: </label>
+                            <input type="number" name="n1" id="iN1">
+                        </p>
+                        <p>
+                            <label for="iN2">Fim: </label>
+                            <input type="number" name="n2" id="iN2">
+                        </p>
+                        <p>
+                            <label for="iStep">Passo: </label>
+                            <input type="number" name="step" id="iStep">
+                        </p>
+                        <p>
+                            <input type="button" value="contar" onclick="sum()">
+                        </p>
+                    </form>
+                    <div id="res">
+                        A resposta aparecerá aqui...
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <script>
 
-        function contar() {
-            var n1 = document.getElementById("iN1").value;
-            var n2 = document.getElementById("iN2").value;
-            var n2 = document.getElementById("iStep").value;
+        function sum() {
+            var n1 = Number(document.getElementById("iN1").value);
+            var n2 = Number(document.getElementById("iN2").value);
+            var step = Number(document.getElementById("iStep").value);
+            var res = document.getElementById("res");
+            res.innerHTML = "";
             
-            var c;
-            for (c = 1; c <= n2; c += step ) {
-                var resultado = n1 + step;
-                res.innerHTML += resultado + "<br>";
+            if (step == 0){
+                    alert("Por favor, insira um passo diferente de 0!");
+                    step = 1;
+            }
+            if (n1 < n2){
+                for ( var c = n1; c <= n2; c += step ) {
+                    res.innerHTML += c + "👉" + " ";
+
+                    if (c == n2){
+                    res.innerHTML += c + "🏁";
+                    } else if (c > n2){
+                    res.innerHTML += "🏁";
+                    }
+                }
+            } else {
+                for ( c = n1; c >= n2; c -= step ) {
+                    res.innerHTML += c + "👉" + " ";
+
+                    if (c == n2){
+                    res.innerHTML += c + "🏁";
+                    } else if (c < n2){
+                    res.innerHTML += "🏁";
+                    }
+                }
             }
         }
     </script>

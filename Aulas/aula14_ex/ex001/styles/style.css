@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html, body{
+    background-color: rgb(19, 41, 19);
+}
+
+#content {
+    display: flex;
+    height: 30vh;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: lightgreen;
+}
+
+header {
+    text-align: center;
+    margin: 25% 0px 10px 0px;
+}
+
+header h1{
+    color: white;
+}
+
+div form p {
+    margin: auto;
+    margin: 0px 0px 15px 10px;
+}
+
+#res {
+    margin: auto;
+    margin-left: 10px;
+}
