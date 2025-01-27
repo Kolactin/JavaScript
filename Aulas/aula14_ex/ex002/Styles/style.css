@@ -1,0 +1,40 @@
+@charset "UFT-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+
+    --cor1: #394273;
+    --cor2: #7386BF;
+    --cor3: #A9E1D6;
+    --cor4: #F2C9C9;
+    --cor5: #F2F2F2;
+}
+
+html, body {
+    background-color: var(--cor1);
+}
+
+header {
+    text-align: center;
+    margin: 25% 0px 0px 0px;
+}
+
+header h1{
+    color: white;
+}
+
+#content{
+    margin: 20px 0px;
+    padding: 20px 0px;
+    background-color: var(--cor3);
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+form p{
+    margin: 10px 0px;
+}

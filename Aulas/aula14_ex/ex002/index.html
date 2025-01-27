@@ -12,7 +12,7 @@
         <h1>Tabuada</h1>
     </header>
 
-    <main>
+    <main id="content">
         <form action="" method="post" autocomplete="on">
             <p>
                 <label for="iN1">Selecione um número</label>
@@ -28,7 +28,9 @@
         </form>
         <div>
             <p id="resultado">
-            <div id="res"></div>
+            <div id="res">
+                A resposta aparecerá aqui...
+            </div>
             </p>
         </div>
     </main>
@@ -38,6 +40,7 @@
             if (document.getElementById('iN1').value == "") {
                 
                 } else {
+                    res.innerHTML = "";
                     for (var c = 1; c <= 10; c++) {
                         var resultado = iN1.value * c;
                         res.innerHTML += iN1.value + "" + "x" + c + " = " + resultado + "<br>";
