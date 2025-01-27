@@ -9,26 +9,26 @@ html, body{
     background-color: rgb(19, 41, 19);
 }
 
+header {
+    text-align: center;
+    margin: 20% 0px 10px 0px;
+}
+
+header h1{
+    color: white;
+}
+
 #content {
     border-radius: 10px;
     margin: auto;
     display: flex;
     width: 75vw;
     height: 30vh;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     align-content: center;
     background-color: lightgreen;
-}
-
-header {
-    text-align: center;
-    margin: 25% 0px 10px 0px;
-}
-
-header h1{
-    color: white;
 }
 
 div form p {
@@ -38,5 +38,23 @@ div form p {
 
 #res {
     margin: auto;
-    margin-left: 10px;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-family: serif;
+
+    color: white;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: lightgreen;
 }
