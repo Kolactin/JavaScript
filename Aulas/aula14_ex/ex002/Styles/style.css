@@ -28,11 +28,13 @@ header h1{
     margin: 20px 0px;
     padding: 20px 0px;
     background-color: var(--cor3);
+    width: 80dvw;
 
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+    align-content: center;
 }
 
 form p{
