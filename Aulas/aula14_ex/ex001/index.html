@@ -55,24 +55,17 @@
             if (n1 < n2){
                 for ( var c = n1; c <= n2; c += step ) {
                     res.innerHTML += c + "👉" + " ";
-
-                    if (c == n2){
-                    res.innerHTML += c + "🏁";
-                    } else if (c > n2){
-                    res.innerHTML += "🏁";
-                    }
                 }
             } else {
                 for ( c = n1; c >= n2; c -= step ) {
                     res.innerHTML += c + "👉" + " ";
-
-                    if (c == n2){
-                    res.innerHTML += c + "🏁";
-                    } else if (c < n2){
-                    res.innerHTML += "🏁";
-                    }
                 }
             }
+            if (c == n2){
+                res.innerHTML += c + "🏁";
+                } else if (c > n2 || c < n2){
+                res.innerHTML += "🏁";
+                }
         }
     </script>
 </body>
