@@ -25,6 +25,7 @@ header h1{
 }
 
 #content{
+    border-radius: 10px;
     margin: auto;
     padding: 20px 0px;
     background-color: var(--cor3);
