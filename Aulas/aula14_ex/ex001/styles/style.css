@@ -10,7 +10,9 @@ html, body{
 }
 
 #content {
+    margin: auto;
     display: flex;
+    width: 75vw;
     height: 30vh;
     flex-flow: column wrap;
     align-items: center;

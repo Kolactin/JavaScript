@@ -25,10 +25,10 @@ header h1{
 }
 
 #content{
-    margin: 20px 0px;
+    margin: auto;
     padding: 20px 0px;
     background-color: var(--cor3);
-    width: 80dvw;
+    width: 60dvw;
 
     display: flex;
     flex-flow: column wrap;
