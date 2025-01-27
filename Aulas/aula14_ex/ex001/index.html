@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <form action="" method="post">
+                    <p>
+                        <label for="iN1">Inicio: </label>
+                        <input type="number" name="n1" id="iN1">
+                    </p>
+                    <p>
+                        <label for="iN2">Fim: </label>
+                        <input type="number" name="n2" id="iN2">
+                    </p>
+                    <p>
+                        <label for="iStep">Passo: </label>
+                        <input type="number" name="step" id="iStep">
+                    </p>
+                    <p>
+                        <input type="button" value="contar" onclick="contar()">
+                    </p>
+                </form>
+                <div id="res">
+                    A resposta aparecerá aqui...
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        function contar() {
+            var n1 = document.getElementById("iN1").value;
+            var n2 = document.getElementById("iN2").value;
+            var n2 = document.getElementById("iStep").value;
+            
+            var c;
+            for (c = 1; c <= n2; c += step ) {
+                var resultado = n1 + step;
+                res.innerHTML += resultado + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
