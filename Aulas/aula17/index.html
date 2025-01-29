@@ -20,7 +20,6 @@
                         <input type="button" value="selecionar" onclick="selec()">
                     </p>
                     <div id="iValor">
-                        Seus números selecionados aparecerão aqui...
                     </div>
                     <p>
                         <input type="button" value="confirmar" onclick="analyse()">
@@ -38,6 +37,30 @@
         <a href="#" target="_blank">Desenvolvido por Junior</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        var valores = [];
+        var num = Number(document.getElementById("iNum").value);
+        
+        function selec(){
+
+        if (num == 0 || num > 100) {
+            window.alert("Por favor, selecione um valor entre 1 e 100!");
+        } else {
+            iValor.innerHTML += "<br> O valor " + num + " foi selecionado";
+
+            valores.push(num);
+        }
+    }
+
+        function analyse(){
+            res.innerHTML += ""
+
+            if (num == 0 || num > 100) {
+                window.alert("Por favor, selecione um valor entre 1 e 100!");
+            } else {
+                res.innerHTML += "O vetor possui " + valores.length + " elementos";
+            }
+        }
+    </script>
 </body>
 </html>
