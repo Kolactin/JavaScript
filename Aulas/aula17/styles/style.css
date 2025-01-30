@@ -15,7 +15,8 @@ body, html {
 
 header {
     text-align: center;
-    margin: 25% 0px 5% 0px;
+    margin: auto;
+    margin: 10vh 0px;
 }
 
 #content {
@@ -23,7 +24,7 @@ header {
     border-radius: 4px;
     margin: auto;
     background-color: var(--cor5);
-    width: 80dvw;
+    width: 80vw;
 }
 
 section {
@@ -31,7 +32,8 @@ section {
     color: black;
 }
 
-div#iValor {
+#iValor {
+    min-width: 200px;
     margin: auto;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -48,6 +50,7 @@ div#iValor {
 }
 
 #res {
+    text-align: left;
     margin: auto;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -60,8 +63,8 @@ div#iValor {
     max-height: 60%;
 }
 
-#res p {
-    margin-bottom: 3px;
+#res > p {
+    line-height: 1.2em;
 }
 
 footer {

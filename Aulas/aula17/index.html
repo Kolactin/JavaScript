@@ -50,39 +50,56 @@
             } return c
         }
 
-
         function selec(){
         var num = Number(document.getElementById("iNum").value);
 
         for (var c = 0; c <= valores.length; c++){
-            if (num == valores[c]){
-                alert("Esse número já foi selecionado, por favor, escolha outro!")
+                if (num == valores[c]){
+                    var verify =0;
+                }
             }
-        }
 
         if (num == 0 || num > 100) {
             window.alert("Por favor, selecione um valor entre 1 e 100!");
+        } else if (verify == 0){
+            alert("Esse número já foi selecionado, por favor, escolha outro!")
         } else {
             iValor.innerHTML += "<br> O valor " + num + " foi selecionado";
 
             valores.push(num);
         }
+        iNum.value = "";
+        iNum.focus(); // "Serve para redirecionar o mouse para a aba após o envio"
+    }
+
+    function med(){
+        var fim = valores.length;
+
+        if (fim == 1){
+            fim = 2;
+        }  
+
+        return (sum()/(fim-1)).toFixed(2);
     }
 
         function analyse(){
             var num = Number(document.getElementById("iNum").value);
-            res.innerHTML = "";
             valores.sort((a, b) => a - b );
-            var fim = valores.length
+            var fim = valores.length;
 
-            if (num == 0 || num > 100) {
-                window.alert("Por favor, selecione um valor entre 1 e 100!");
+            if(fim == 0){
+                var ver_l = 0;
+            }
+            
+            if (ver_l == 0) {
+                window.alert("Por favor, adicione valores!");
             } else {
-                res.innerHTML += "Ao todo, temos " + fim + " números cadastrados. <br>";
-                res.innerHTML += "o maior valor é: " + valores[fim-1] + "<br>";
-                res.innerHTML += "o menor valor é: " + valores[0] + "<br>";
-                res.innerHTML += "A soma entre os valores é: " + sum() + "<br>";
-                res.innerHTML += "A média dos valores é: " + (sum()/(fim-1).toFixed(2));
+                res.innerHTML = "";
+                res.innerHTML += "<p> Ao todo, temos " + fim + " números cadastrados. <br></p>";
+                res.innerHTML += "<p> O maior valor é: " + valores[fim-1] + "<br> </p>";
+                res.innerHTML += "<p> O menor valor é: " + valores[0] + "<br> </p>";
+                res.innerHTML += "<p> A soma entre os valores é: " + sum() + "<br> </p>";
+                res.innerHTML += "<p> A média dos valores é: " + med() + "</p>";
             }
         }
     </script>
