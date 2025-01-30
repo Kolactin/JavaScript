@@ -1,0 +1,89 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    --cor1:#62733D;
+    --cor2:#85A653;
+    --cor3:#ACD89D;
+    --cor4:#C0D9B4;
+    --cor5:#D1EACA;
+}
+
+body, html {
+    background-color: var(--cor2);
+    color: white;
+}
+
+header {
+    text-align: center;
+    margin: 25% 0px 5% 0px;
+}
+
+#content {
+    padding: 5px;
+    border-radius: 4px;
+    margin: auto;
+    background-color: var(--cor5);
+    width: 80dvw;
+}
+
+section {
+    text-align: center;
+    color: black;
+}
+
+div#iValor {
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    max-width: 50dvw;
+    background-color: var(--cor4);
+    color: black;
+    border-radius: 5px;
+    scroll-behavior: smooth;
+}
+
+#ivalor p {
+    margin: 2px 0px;
+    padding-bottom: 10px;
+}
+
+#res {
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    max-width: 60dvw;
+    background-color: var(--cor4);
+    color: black;
+    border-radius: 3px;
+    border: 1px solid black;
+    scroll-behavior: smooth;
+    max-height: 60%;
+}
+
+#res p {
+    margin-bottom: 3px;
+}
+
+footer {
+    width: 60dvw;
+    margin: auto;
+    border-radius: 10px;
+
+    margin-top: 5%;
+    height: 20px;
+    text-align: center;
+    background-color: black;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--cor5);
+}
+
+footer > a:hover {
+    padding: 2px 5px;
+    text-decoration: underline;
+    color: black;
+    background-color: var(--cor4);
+    border-radius: 8px;
+}

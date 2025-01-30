@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analisador de números</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
@@ -34,14 +35,30 @@
     </main>
 
     <footer>
-        <a href="#" target="_blank">Desenvolvido por Junior</a>
+        <a href="#" target="_blank">Desenvolvido por Little Junior</a>
     </footer>
 
     <script>
         var valores = [];
-        var num = Number(document.getElementById("iNum").value);
-        
+        var maior = 0;
+
+        function sum(){
+            var c = 0;
+
+            for (var i = 0; i < valores.length; i++){
+                c += valores[i];
+            } return c
+        }
+
+
         function selec(){
+        var num = Number(document.getElementById("iNum").value);
+
+        for (var c = 0; c <= valores.length; c++){
+            if (num == valores[c]){
+                alert("Esse número já foi selecionado, por favor, escolha outro!")
+            }
+        }
 
         if (num == 0 || num > 100) {
             window.alert("Por favor, selecione um valor entre 1 e 100!");
@@ -53,12 +70,19 @@
     }
 
         function analyse(){
-            res.innerHTML += ""
+            var num = Number(document.getElementById("iNum").value);
+            res.innerHTML = "";
+            valores.sort((a, b) => a - b );
+            var fim = valores.length
 
             if (num == 0 || num > 100) {
                 window.alert("Por favor, selecione um valor entre 1 e 100!");
             } else {
-                res.innerHTML += "O vetor possui " + valores.length + " elementos";
+                res.innerHTML += "Ao todo, temos " + fim + " números cadastrados. <br>";
+                res.innerHTML += "o maior valor é: " + valores[fim-1] + "<br>";
+                res.innerHTML += "o menor valor é: " + valores[0] + "<br>";
+                res.innerHTML += "A soma entre os valores é: " + sum() + "<br>";
+                res.innerHTML += "A média dos valores é: " + (sum()/(fim-1).toFixed(2));
             }
         }
     </script>
