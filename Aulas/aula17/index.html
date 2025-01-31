@@ -17,7 +17,9 @@
                 <form action="" method="post">
                     <p>
                         <label for="iNum">Selecione um número (entre 1 e 100)</label>
-                        <input type="number" name="num" id="iNum">
+                    </p>
+                    <p>
+                        <input type="number" name="num" id="iNum" onkeydown="tecla()">
                         <input type="button" value="selecionar" onclick="selec()">
                     </p>
                     <div id="iValor">
@@ -40,7 +42,8 @@
     </footer>
 
     <script>
-        var valores = []
+        var valores = [];
+        var chave;
 
         function sum(){
             var c = 0;
@@ -50,14 +53,33 @@
             } return c;
         }
 
+        function tecla() {
+            var input = document.getElementById("iNum");
+
+            // Agora adicionamos o evento corretamente
+            input.addEventListener("keydown", verificarEnter);
+            verificarEnter();
+        }
+
+        // Função separada para evitar duplicação de ouvintes
+        function verificarEnter(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Evita o comportamento padrão do Enter
+                selec(); // Chama a função selec()
+            }
+        }
+
+
         function selec(){
-            var num = Number(document.getElementById("iNum").value);
+            var num = document.getElementById("iNum").value;
             var list = document.getElementById("fList");
             let item = document.createElement('option');
+            var verify;
 
             for (var c = 0; c <= valores.length; c++){
                 if (num == valores[c]){
-                    var verify = 0;
+                     verify = 0;
+                     break;
                 }
             }
 
@@ -66,7 +88,7 @@
             } else if (verify == 0){
                 alert("Esse número já foi selecionado, por favor, escolha outro!");
             } else {
-                valores.push(num);
+                valores.push(Number(num));
 
                 item.text = "O valor " + num + " foi selecionado";
                 list.appendChild(item);
@@ -77,11 +99,7 @@
     }
 
     function med(){
-        var fim = valores.length;
-
-        if (fim == 1){
-            fim = 2;
-        }  
+        var fim = valores.length; 
 
         return (sum()/(fim)).toFixed(2);
     }
