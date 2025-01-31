@@ -49,6 +49,10 @@ section {
     padding-bottom: 10px;
 }
 
+select#iList {
+    width: 30vw;
+}
+
 #res {
     text-align: left;
     margin: auto;

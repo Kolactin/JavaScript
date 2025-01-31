@@ -21,6 +21,7 @@
                         <input type="button" value="selecionar" onclick="selec()">
                     </p>
                     <div id="iValor">
+                        <select name="list" id="iList" size="8"></select>
                     </div>
                     <p>
                         <input type="button" value="confirmar" onclick="analyse()">
@@ -40,7 +41,6 @@
 
     <script>
         var valores = [];
-        var maior = 0;
 
         function sum(){
             var c = 0;
@@ -70,6 +70,7 @@
         }
         iNum.value = "";
         iNum.focus(); // "Serve para redirecionar o mouse para a aba após o envio"
+    
     }
 
     function med(){
@@ -79,19 +80,15 @@
             fim = 2;
         }  
 
-        return (sum()/(fim-1)).toFixed(2);
+        return (sum()/(fim)).toFixed(2);
     }
 
         function analyse(){
             var num = Number(document.getElementById("iNum").value);
             valores.sort((a, b) => a - b );
             var fim = valores.length;
-
-            if(fim == 0){
-                var ver_l = 0;
-            }
             
-            if (ver_l == 0) {
+            if (fim == 0) {
                 window.alert("Por favor, adicione valores!");
             } else {
                 res.innerHTML = "";
